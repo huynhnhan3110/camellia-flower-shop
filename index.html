@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hymenaeous</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            outline: 0;
+            margin: 0;
+        }
+        img {
+            width: 200px;
+        }
+        body {
+            font-family: "Open sans", sans-serif;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 144px;
+            background-color: #4dc474;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 99;
+        }
+        .logo img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 0 solid #ffffff55;
+            border-radius: 50%;
+            transition: all ease 0.5s;
+        }
+        .logo img:hover {
+            border-width: 15px;
+        }
+        .menu ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 30px;
+        }
+        .menu ul li a {
+            position: relative;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
+            color: #fff;
+        }
+        .menu ul li:not(:last-child) a:before{
+            position: absolute;
+            content: '';
+            bottom: -10px;
+            width: 0;
+            left: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: all ease 0.5s;
+        }
+        .menu ul li a:hover:before {
+            width: 100%;
+        }
+        .menu ul li.btn a {
+            background-color: #fff;
+            border-radius: 6px;
+            padding: 15px 42px;
+            color: #4dc474;
+            transition: all ease 0.5s;
+            border: 2px solid #fff;
+        }
+        .menu ul li.btn a:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+        .banner {
+            position: relative;
+            background-color: #4dc474;
+        }
+        .banner:before {
+            content: '';
+            position: absolute;
+            bottom: -70px;
+            left: 0;
+            width: 110%;
+            height: 150px;
+            background-color: #fff;
+            transform: rotate(-4deg);
+        }
+        .banner::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 110%;
+            height: 150px;
+            background-color: #fff;
+            transform: rotate(-4deg);
+            opacity: .4;
+        }
+        .banner-top {
+            padding-top: 190px;
+            padding-bottom: 60px;
+            padding-left: 150px;
+            padding-right: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .text {
+            width: 40%;
+            color: #fff;
+        }
+        .text h1 {
+            font-size: 72px;
+            font-weight: 600;
+
+        }
+        .text p {
+            font-size: 18px;
+            line-height: 32px;
+            margin: 25px 0 40px;
+
+        }
+        .text a {
+            position: relative;
+            display: inline-block;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 20px 64px 20px 44px;
+            border-radius: 50px;
+            transition: all ease 0.5s;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+        .text a:before {
+            content: '\f105';
+            font-family: fontawesome;
+            position: absolute;
+            font-size: 38px;
+            font-weight: 600;
+            top: 0;
+            right: -15px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            background-color: #fff;
+            border-radius: 50px;
+            color: #4dc474;
+            text-align: center;
+            transition: all ease 0.5s;
+        }
+        .text a:hover {
+            background-color: #fff;
+            color: #4dc474;
+        }
+        .text a:hover:before {
+            right: 0;
+        }
+        .slider {
+            width: 60%;
+        }
+        .slider .item {
+            margin: 15px;
+        }
+        .slider .item img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .image-group {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 150px 180px;
+            margin-top: 65px;
+        }
+        .image-group img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: all ease 0.5s;
+            border: 0 solid #ffffff8c;
+        }
+        .image-group img:hover {
+            border-width: 15px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <a href="#"><img src="images/logo.jpg" alt=""></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Faq</a></li>
+                    <li class="btn"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="banner">
+            <div class="banner-top">
+                <div class="text">
+                    <h1>Camellia<br> Flower Shop</h1>
+                    <p>Camellia luôn cam kết đặt chất lượng hoa luôn tươi mới lên hàng đầu giao cho khách. Các mẫu hoa luôn được cắm đủ số lượng và giống kiểu dáng trên website nhất có thể.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="slider">
+                    <div class="slider-inner">
+                        <div class="item">
+                            <img src="images/banner1.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="images/banner2.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="images/banner3.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="images/banner4.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="images/banner5.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-group">
+                <a href="#"><img src="images/img1.jpg" alt=""></a>
+                <a href="#"><img src="images/img2.jpg" alt=""></a>
+                <a href="#"><img src="images/img3.jpg" alt=""></a>
+                <a href="#"><img src="images/img4.jpg" alt=""></a>
+                <a href="#"><img src="images/img5.jpg" alt=""></a>
+                <a href="#"><img src="images/img6.jpg" alt=""></a>
+                <a href="#"><img src="images/img7.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".slider-inner").slick({
+                infinite:true,
+                slidesToShow:3,
+                slidesToScroll:1,
+                centerMode:true,
+                centerPadding:'0px',
+                arrows:false,
+                autoplay:true,
+                autoplaySpeed:1000,
+                speed:1500
+            })
+        })
+    </script>
+</body>
+</html>
